@@ -18,7 +18,8 @@ describe('E-commerce',async()=>{
         var productsname="earpods";
 
         product.SearchProduct(productsname);
-        product.selectThirdProductAddToCart();
+        //product.selectThirdProductAddToCart();
+        product.selectThirdProductAndAddToCart()
         product.verifyAddedProductToCart();
     })
 })

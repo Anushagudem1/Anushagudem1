@@ -18,6 +18,19 @@ export class AddProductToCart{
         cy.get(LoginObject.verifyaddToCart).should('be.visible');
     }
 
+    selectThirdProductAndAddToCart(){
+        cy.get("[data-action='puis-card-container-declarative']").find(LoginObject.seeOption).eq('2').invoke('text').then((text)=>{
+            if(text.trim()=='Add to cart'){
+                cy.get("[data-action='puis-card-container-declarative']").find(LoginObject.seeOption).eq('2').click();
+            }
+            else{
+                cy.get("[data-action='puis-card-container-declarative']").find(LoginObject.seeOption).eq('2').click();
+                cy.xpath(LoginObject.addToCartBtn).click();
+                cy.xpath(LoginObject.addedToCartSuccessNotifycation).should('be.visible');
+            }
+        })
+    }
+
     verifyAddedProductToCart(){
         //click on cart button
         cy.get(LoginObject.cartBtn).click();

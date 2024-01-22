@@ -16,5 +16,9 @@ module.exports = defineConfig({
     baseUrl: 'https://www.amazon.com/',
     specPattern: 'cypress/e2e/**/*.spec.js',
     experimentalSessionAndOrigin: true,
+    
+      "supportFile": false
+
+    
   },
 })
